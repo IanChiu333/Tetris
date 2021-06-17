@@ -9,7 +9,6 @@ class ZBlock extends Block {
     addToList();
   }
   public void turn() {
-    rotationNumber++;
     switch(rotationNumber%2) {
     case 0:
       s1.goTo(x+40, y);

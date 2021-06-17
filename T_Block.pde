@@ -9,7 +9,6 @@ class TBlock extends Block {
     addToList();
   }
   public void turn() {
-    rotationNumber++;
     switch(rotationNumber%4) {
     case 0:
       s1.goTo(x-40, y);

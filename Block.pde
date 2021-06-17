@@ -2,7 +2,7 @@ class Block {
   float x, y;
   Square s1, s2, s3, s4;
   int rotationNumber;
-  
+
   public Block() {
     x = 200;
     y= 40;
@@ -109,6 +109,23 @@ class Block {
     }
   }
   public void turn() {
-
+  }
+  public void performRotation() {
+    rotationNumber++;
+    turn();
+    if (outOfBounds() == true) {
+      rotationNumber--;
+      turn();
+    }
+  }
+  public boolean outOfBounds() {
+    if (s1.x <= -40 || s2.x <= -40 || s3.x <= -40 || s4.x <= -40 ) {
+      return(true);
+    }
+    else if (s1.x >= 400 || s2.x >= 400 || s3.x >= 400 || s4.x >= 400 ) {
+      return(true);
+    } else {
+      return(false);
+    }
   }
 }
